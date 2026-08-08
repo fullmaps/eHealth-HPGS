@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión</title>
+</head>
+<body>
+
+  <div class="card">
+    <div class="icon-box">
+      <svg viewBox="0 0 24 24">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      </svg>
+    </div>
+
+    <div class="title-group">
+      <div class="cursor-line"></div>
+      <h1 class="title">Iniciar sesión</h1>
+    </div>
+    
+    <p class="subtitle">Introduce tu número de cédula para acceder a tu expediente.</p>
+
+    <form onsubmit="return false;">
+      <div class="form-group">
+        <label class="label" for="cedula">Cédula de identidad</label>
+        <input 
+          type="text" 
+          id="cedula" 
+          class="input-field" 
+          placeholder="000-0000000-0"
+          autocomplete="off"
+        >
+      </div>
+
+      <button type="submit" class="btn-submit">Entrar al portal</button>
+    </form>
+
+    <div class="demo-box">
+      <div class="demo-title">CÉDULAS DE DEMOSTRACIÓN</div>
+      <div class="demo-list">
+        <div class="demo-item">
+          <span class="demo-code">402-1234567-8</span>
+          <span class="demo-name">Ana Lucía Peralta</span>
+        </div>
+        <div class="demo-item">
+          <span class="demo-code">001-7654321-0</span>
+          <span class="demo-name">Miguel Ángel Santos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
