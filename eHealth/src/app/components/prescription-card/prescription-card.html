@@ -1,0 +1,35 @@
+<div class="card rx-card">
+  <div class="rx-header">
+    <div class="rx-title-group">
+      <svg class="rx-icon" viewBox="0 0 24 24">
+        <path d="M4.5 10.5C3.67 10.5 3 11.17 3 12s.67 1.5 1.5 1.5h15c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5h-15zM10.5 4.5C10.5 3.67 11.17 3 12 3s1.5.67 1.5 1.5v15c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5v-15z"/>
+      </svg>
+      <h3 class="rx-title">{{ prescription().medicamento }}</h3>
+    </div>
+    <span 
+      class="status-badge" 
+      [class.status-teal]="prescription().estado === 'Vigente'"
+      [class.status-gray]="prescription().estado === 'Finalizada'">
+      {{ prescription().estado }}
+    </span>
+  </div>
+
+  <div class="rx-grid">
+    <div class="rx-item">
+      <span class="rx-label">DOSIS</span>
+      <span class="rx-value">{{ prescription().dosis }}</span>
+    </div>
+    <div class="rx-item">
+      <span class="rx-label">FRECUENCIA</span>
+      <span class="rx-value">{{ prescription().frecuencia }}</span>
+    </div>
+    <div class="rx-item">
+      <span class="rx-label">DURACIÓN</span>
+      <span class="rx-value">{{ prescription().duracion }}</span>
+    </div>
+  </div>
+
+  <div class="rx-footer">
+    Emitida el {{ prescription().fechaEmision }} por {{ prescription().medico }}
+  </div>
+</div>

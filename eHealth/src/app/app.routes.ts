@@ -1,6 +1,14 @@
 import { Routes } from '@angular/router';
-import { Login } from './features/auth/pages/login/login';
+
 export const routes: Routes = [
-  { path: 'login', component: Login },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
+  {
+    path: 'auth',
+    loadChildren: () => import('./features/auth/auth.routes').then(m => m.AUTH_ROUTES)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./features/dashboard/dashboard.routes').then(m => m.DASHBOARD_ROUTES)
+  },
+  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
+  { path: '**', redirectTo: 'auth/login' }
 ];

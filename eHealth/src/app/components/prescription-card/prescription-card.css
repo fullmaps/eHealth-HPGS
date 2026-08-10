@@ -1,0 +1,86 @@
+.card {
+  background-color: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.rx-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rx-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rx-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rx-icon {
+  width: 20px;
+  height: 20px;
+  fill: #0c8270;
+}
+
+.rx-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.status-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 16px;
+}
+
+.status-teal {
+  background-color: #e2f4f1;
+  color: #0c8270;
+}
+
+.status-gray {
+  background-color: #e2e8f0;
+  color: #64748b;
+}
+
+.rx-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.rx-item {
+  background-color: #f0f7f5;
+  padding: 12px 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rx-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #52706b;
+  letter-spacing: 0.5px;
+}
+
+.rx-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.rx-footer {
+  font-size: 12px;
+  color: #64748b;
+}

@@ -1,0 +1,116 @@
+<header class="navbar">
+  <div class="brand">
+    <svg viewBox="0 0 24 24" class="brand-icon">
+      <path d="M19 14c1.49 0 2.87.47 4 1.26V8c0-1.1-.9-2-2-2h-4V4c0-1.1-.9-2-2-2h-6c-1.1 0-2 .9-2 2v2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h10c-.63-1.18-1-2.54-1-4 0-4.42 3.58-8 8-8zm-8-8h4v2h-4V6z"/>
+      <path d="M20 17v-3h-2v3h-3v2h3v3h2v-3h3v-2z"/>
+    </svg>
+    <span class="brand-name">Hospital General de la Plaza de la Salud</span>
+  </div>
+  <button class="btn-logout" (click)="logout()">
+    <svg viewBox="0 0 24 24">
+      <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+    </svg>
+    Cerrar sesión
+  </button>
+</header>
+
+<main class="container">
+  <!-- Perfil del Paciente -->
+  <section class="card profile-card">
+    <div class="profile-header">
+      <div class="user-info">
+        <div class="avatar">AL</div>
+        <div>
+          <h1 class="user-name">Ana Lucía Peralta</h1>
+          <span class="user-id">402-1234567-8</span>
+        </div>
+      </div>
+      <div class="badge-verified">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+        Expediente verificado
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <span class="info-label">FECHA DE NACIMIENTO</span>
+        <span class="info-value">14 de marzo, 1991</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">SEXO</span>
+        <span class="info-value">Femenino</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">TIPO DE SANGRE</span>
+        <span class="info-value">O+</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">TELÉFONO</span>
+        <span class="info-value">(809) 555-0142</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">SEGURO MÉDICO</span>
+        <span class="info-value">ARS Humano — Plan Básico</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">NO. DE AFILIADO</span>
+        <span class="info-value">HM-884-2210</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Historial Médico -->
+  <section class="history-section">
+    <h2 class="section-title">Historial médico</h2>
+
+    <div class="tabs">
+      <button 
+        class="tab-btn" 
+        [class.active]="activeTab() === 'alergias'"
+        (click)="setTab('alergias')">
+        Alergias <span class="tab-count">{{ alergias().length }}</span>
+      </button>
+      <button 
+        class="tab-btn" 
+        [class.active]="activeTab() === 'diagnosticos'"
+        (click)="setTab('diagnosticos')">
+        Diagnósticos <span class="tab-count">{{ diagnosticos().length }}</span>
+      </button>
+      <button 
+        class="tab-btn" 
+        [class.active]="activeTab() === 'recetas'"
+        (click)="setTab('recetas')">
+        Recetas <span class="tab-count">{{ recetas().length }}</span>
+      </button>
+    </div>
+
+    <!-- Pestaña Alergias -->
+    @if (activeTab() === 'alergias') {
+      <div class="list-container">
+        @for (item of alergias(); track item.id) {
+          <app-allergy-card [allergy]="item" />
+        }
+      </div>
+    }
+
+    <!-- Pestaña Diagnósticos -->
+    @if (activeTab() === 'diagnosticos') {
+      <div class="list-container">
+        @for (item of diagnosticos(); track item.id) {
+          <app-diagnostic-card [diagnostic]="item" />
+        }
+      </div>
+    }
+
+    <!-- Pestaña Recetas -->
+    @if (activeTab() === 'recetas') {
+      <div class="list-container">
+        @for (item of recetas(); track item.id) {
+          <app-prescription-card [prescription]="item" />
+        }
+      </div>
+    }
+  </section>
+</main>

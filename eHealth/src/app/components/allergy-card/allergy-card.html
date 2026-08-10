@@ -1,0 +1,20 @@
+<div class="card list-item">
+  <div class="alert-icon">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 5.99L19.53 19H4.47L12 5.99M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
+    </svg>
+  </div>
+  <div class="item-content">
+    <div class="item-header">
+      <h3 class="item-title">{{ allergy().nombre }}</h3>
+      <span 
+        class="severity-badge" 
+        [class.severity-high]="allergy().severidad === 'alta'"
+        [class.severity-medium]="allergy().severidad === 'media'"
+        [class.severity-low]="allergy().severidad === 'baja'">
+        Severidad {{ allergy().severidad }}
+      </span>
+    </div>
+    <p class="item-subtext">Reacción: {{ allergy().reaccion }}</p>
+  </div>
+</div>
