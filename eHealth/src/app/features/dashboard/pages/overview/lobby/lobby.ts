@@ -27,47 +27,35 @@ export class Lobby {
   ]);
 
   diagnosticos = signal([
-    {
-      id: '1',
-      titulo: 'Faringitis bacteriana',
-      fecha: '12 May 2026',
-      medico: 'Dra. Marisol Cabrera',
-      especialidad: 'Medicina General',
-      estado: 'Resuelto',
-      notas: 'Cultivo positivo. Tratamiento con antibiótico alternativo por alergia a penicilina.',
-      archivoPdf: { nombre: 'informe-faringitis-bacteriana.pdf', tamano: '44 KB' }
-    },
-    {
-      id: '2',
-      titulo: 'Anemia ferropénica leve',
-      fecha: '03 Feb 2026',
-      medico: 'Dr. Juan Ramírez',
-      especialidad: 'Hematología',
-      estado: 'En seguimiento',
-      notas: 'Hemoglobina 10.8 g/dL. Repetir hemograma en 3 meses.',
-      archivoPdf: { nombre: 'informe-anemia-ferropenica.pdf', tamano: '44 KB' }
-    },
-    {
-      id: '3',
-      titulo: 'Rinitis alérgica estacional',
-      fecha: '21 Sep 2025',
-      medico: 'Dra. Carla Then',
-      especialidad: 'Alergología',
-      estado: 'Crónico',
-      notas: 'Se recomienda evitar exposición a polvo y usar antihistamínico en temporada.',
-      archivoPdf: { nombre: 'informe-rinitis-alergica.pdf', tamano: '44 KB' }
-    },
-    {
-      id: '4',
-      titulo: 'Cocolitis Pulmonar',
-      fecha: '8 Ene 2026',
-      medico: 'Dra. Maria Gonzalez',
-      especialidad: 'Alergología',
-      estado: 'Crónico',
-      notas: 'Se recomienda evitar exposicion al sol durante mucho tiempo.',
-      archivoPdf: { nombre: 'informe-cocolitis-pulmonar.pdf', tamano: '47 KB' }
+  {
+    id: '1',
+    titulo: 'Faringitis bacteriana',
+    fecha: '12 May 2026',
+    medico: 'Dra. Marisol Cabrera',
+    especialidad: 'Medicina General',
+    estado: 'Resuelto',
+    notas: 'Cultivo positivo. Tratamiento con antibiótico alternativo por alergia a penicilina.',
+    archivoPdf: { 
+      nombre: 'informe-faringitis-bacteriana.pdf', 
+      tamano: '44 KB',
+      url: '/docs/prueba.pdf' 
     }
-  ]);
+  },
+  {
+    id: '2',
+    titulo: 'Anemia ferropénica leve',
+    fecha: '03 Feb 2026',
+    medico: 'Dr. Juan Ramírez',
+    especialidad: 'Hematología',
+    estado: 'En seguimiento',
+    notas: 'Hemoglobina 10.8 g/dL. Repetir hemograma en 3 meses.',
+    archivoPdf: { 
+      nombre: 'informe-anemia-ferropenica.pdf', 
+      tamano: '44 KB',
+      url: '/docs/informe-pruebas.pdf' 
+    }
+  }
+]);
 
   recetas = signal([
     {

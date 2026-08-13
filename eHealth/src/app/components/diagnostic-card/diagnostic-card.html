@@ -14,24 +14,34 @@
   @if (diagnostic().archivoPdf; as pdf) {
     <div class="attachment-box">
       <div class="file-details">
-        <div class="pdf-icon">
-          <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+        <div class="pdf-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+          </svg>
         </div>
         <div>
           <div class="file-name">{{ pdf.nombre }}</div>
           <div class="file-size">PDF · {{ pdf.tamano }}</div>
         </div>
       </div>
-      <div class="file-actions">
-        <button class="btn-pdf-view">
-          <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-          Ver PDF
-        </button>
-        <button class="btn-pdf-download">
-          <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-          Descargar
-        </button>
-      </div>
+
+      <<div class="file-actions">
+  <button 
+    type="button" 
+    class="btn-pdf-view" 
+    (click)="verPdf(pdf.url)">
+    <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+    Ver PDF
+  </button>
+
+  <button 
+    type="button" 
+    class="btn-pdf-download" 
+    (click)="descargarPdf(pdf.url, pdf.nombre)">
+    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+    Descargar
+  </button>
+</div>
     </div>
   }
 </div>
