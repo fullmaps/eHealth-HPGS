@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hgpsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0d9488" />
+    </linearGradient>
+  </defs>
+  <!-- Fondo redondeado -->
+  <rect width="512" height="512" rx="128" fill="url(#hgpsGrad)" />
+  
+  <!-- Cruz Médica Central + Pulso -->
+  <path d="M 216 112 C 216 100 226 90 238 90 L 274 90 C 286 90 296 100 296 112 L 296 216 L 400 216 C 412 216 422 226 422 238 L 422 274 C 422 286 412 296 400 296 L 296 296 L 296 400 C 296 412 286 422 274 422 L 238 422 C 226 422 216 412 216 400 L 216 296 L 112 296 C 100 296 90 286 90 274 L 90 238 C 90 226 100 216 112 216 L 216 216 Z" fill="#ffffff" />
+  
+  <!-- Detalle del pulso clínico en el centro -->
+  <path d="M 160 256 L 210 256 L 230 210 L 255 295 L 280 235 L 295 256 L 352 256" stroke="url(#hgpsGrad)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+</svg>
