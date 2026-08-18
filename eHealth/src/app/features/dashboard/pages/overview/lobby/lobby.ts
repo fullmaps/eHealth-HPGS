@@ -52,7 +52,7 @@ export class Lobby {
     archivoPdf: { 
       nombre: 'informe-anemia-ferropenica.pdf', 
       tamano: '44 KB',
-      url: '/docs/informe-pruebas.pdf' 
+      url: '/docs/prueba.pdf' 
     }
   }
 ]);
